@@ -20,6 +20,9 @@ with open("transition_matrix.txt", "r") as tm:
 
     # generated a 2D list - each nth sublist contains the chords from the nth song.
     a = tm.read()
+
+
+    
     a = a.split(")")
     for x in range(len(a)):
         a[x] = a[x].replace("'", "")
