@@ -87,7 +87,7 @@ NOTES = {"B#": 0, "C": 0, "Dbb": 0, "C#": 1, "Db": 1, "D": 2, "D#": 3, "Eb": 3,
 track = 0
 channel = 0
 time = 0
-duration = 2
+duration = 1
 tempo = 120
 volume = 100
 
@@ -103,15 +103,13 @@ def generate_MIDI_segment(chord_sequence):
         try:
             notes = chords.from_shorthand(chord)  # does mingus.core recognize the chord?
         except FormatError:
-            print(f"Chord {i + 1} is causing an error. A C major chord"
-                f" will be generated instead.")  # generate a Cmaj chord if it doesn't
             notes = ["C", "E", "G"]
 
         for note in notes:
             # add each note to the MIDI file
             # make sure that the notes are all generated at the same time!
             MyMIDI.addNote(track, channel, convert(note, 4), time + x, duration, volume)
-            x = x + 1
+        x = x + 1
 
 print(A_chords)
 print(B_chords)
@@ -119,7 +117,6 @@ for _ in range(2):
     generate_MIDI_segment(A_chords)
     generate_MIDI_segment(B_chords)
 
-with open("random_chords.mid", "wb") as output_file:
+with open("ABAB_chords.mid", "wb") as output_file:
     MyMIDI.writeFile(output_file)
     print("File has been outputted.")
-
