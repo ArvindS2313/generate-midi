@@ -63,9 +63,9 @@ def generate_chord_sequence(starting_chord, num_chords):
                 break
     return chord_sequence
 
+
 A_chords = generate_chord_sequence(starting_chord, 3)
 B_chords = generate_chord_sequence(starting_chord, 3)
-
 
 # check for "add" phrase as mingus.core does not recognize them
 def check_add(chord_sequence):
@@ -111,8 +111,6 @@ def generate_MIDI_segment(chord_sequence):
             MyMIDI.addNote(track, channel, convert(note, 4), time + x, duration, volume)
         x = x + 1
 
-print(A_chords)
-print(B_chords)
 for _ in range(2):
     generate_MIDI_segment(A_chords)
     generate_MIDI_segment(B_chords)
