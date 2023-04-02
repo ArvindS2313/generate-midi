@@ -30,7 +30,3 @@ class Section():
             if self.pattern[i] == segment:
                 self.segments[i] = chord_sequence
                 
-a = Section("A", "B", "A", "B")
-a.generate_pattern("A", Chord("Dbsus4"))
-a.generate_pattern("B", Chord("C"))
-print(a.segments)
