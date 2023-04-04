@@ -39,8 +39,6 @@ for song in a:
                 chord_tm[chord][song[i + 1]] = 0
             chord_tm[chord][song[i + 1]] += 1
 
-print(chord_tm, file = open("transition_dict.txt", "w"))
-
 # choose the first random chord
 list_keys = list(chord_tm.keys())
 current_chord = random.choice(list_keys)

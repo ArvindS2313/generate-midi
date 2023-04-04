@@ -12,7 +12,6 @@ class Chord:
          "G#": 8, "Ab": 8, "A": 9, "A#": 10, "Bb": 10, "B": 11, "Cb": 11}
         self.midi = [self.convert(note) for note in self.notes]
 
-        
     def generate_notes(self):
         try:
             notes = chords.from_shorthand(self.name)
