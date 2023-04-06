@@ -30,10 +30,21 @@ for segment in (verse, chorus, verse, chorus):
                 MyMIDI.addNote(track, channel, note, time + counter, duration, volume)
             counter = counter + 1
 
-with open("VCVC_chords.mid", "wb") as output_file:
+
+with open(f"VCVC_song_3.mid", "wb") as output_file:
     MyMIDI.writeFile(output_file)
     print("File has been outputted.")
 
+# Print VERSE
+print("Verse Segments: ", end="  ")
+for segment in verse.segments:
+    for chord in segment:
+        print(chord.name, end="  ")
+print()
+print("Chorus Segments: ", end="  ")
+for segment in chorus.segments:
+    for chord in segment:
+        print(chord.name, end="  ")
 
 
 
