@@ -1,14 +1,18 @@
 from Section import Section
+from SimpleAgent import SimpleAgent
 from midiutil import MIDIFile
 
-verse = Section("A", "B", "A", "B", "A", "C", "A", "B")
-for x in ("A", "B", "C"):
-    verse.generate_pattern(x)
+# verse = Section("A", "B", "A", "B", "A", "C", "A", "B")
+# for x in ("A", "B", "C"):
+#     verse.generate_pattern(x)
 
-chorus = Section("D", "E", "D", "E")
-chorus.generate_pattern("D", verse.segments[1][-1])
-chorus.generate_pattern("E")
+# chorus = Section("D", "E", "D", "E")
+# chorus.generate_pattern("D", verse.segments[1][-1])
+# chorus.generate_pattern("E")
 
+x = SimpleAgent()
+verse = x.verse
+chorus = x.chorus
 
 # Constant MIDI file information
 track = 0
@@ -31,7 +35,7 @@ for segment in (verse, chorus, verse, chorus):
             counter = counter + 1
 
 
-with open(f"VCVC_song_3.mid", "wb") as output_file:
+with open(f"VCVC_simple_agent.mid", "wb") as output_file:
     MyMIDI.writeFile(output_file)
     print("File has been outputted.")
 
