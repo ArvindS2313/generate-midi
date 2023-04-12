@@ -1,0 +1,2 @@
+class NonRepetitiveAgent:
+    pass
