@@ -2,7 +2,7 @@
 
 Some old code I wrote for my HS research project. Abandoned this project in June 2023 but making this repo public as it's a proof-of-concept of what agent-based systems can do.
 
-# generate-midi
+# brief description
 
 This library generates a .midi file of chords of an alternating verse and chorus pattern (verse-chorus-verse-chorus). The verses/choruses can either be simple (using the SimpleAgent), exotic (using the ExoticAgent), or not repetitive (using the NonRepetitiveAgent). This can be updated by changing line 13 of generate_midi_VCVC.py. 
 
