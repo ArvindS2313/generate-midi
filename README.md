@@ -1,5 +1,7 @@
 # generate-midi
 
+Some old code I wrote for my HS research project. Abandoned this project in June 2023 but making this repo public.
+
 Be sure to use pip install to install the midiutil and mingus.core library. 
 
 Versions:
